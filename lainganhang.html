@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td,th,tr{
+        border: 1px black solid;
+        width: 100px;
+        height: 20px;
+    }
+</style>
+<body>
+    <table>
+        <tr>
+            <th colspan="3"> Lãi suất ngân hàng </th>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="number" id="money" style="width:200px">
+            </td>
+            <td><input type="button" onclick="check()" value="kiểm tra" style="width: 100px;"></td>
+        </tr>
+        <tr>
+            <td>1 tháng (vnd)</td>
+            <td>6 tháng (vnd)</td>
+            <td>1 năm (vnd)</td>
+        </tr>
+        <tr>
+            <td id="onemonth"></td>
+            <td id="sixmonth"></td>
+            <td id="oneyear"></td>
+        </tr>
+    </table>
+    <script>
+        function check() {
+            var 
+            moneyrs= Number(money.value);
+            var
+            m1 = moneyrs*(0.04+1),
+            m6 = moneyrs*Math.pow(0.05+1,6),
+            y1 = moneyrs*Math.pow(0.06+1,12);
+
+            onemonth.innerText= m1.toFixed(3);
+            sixmonth.innerText= m6.toFixed(3);
+            oneyear.innerText= y1.toFixed(3);
+        
+        }
+    </script>
+
+</body>
+
+</html>
