@@ -41,13 +41,13 @@
             var 
             moneyrs= Number(money.value);
             var
-            m1 = moneyrs*(0.04+1),
-            m6 = moneyrs*Math.pow(0.05+1,6),
+            m1 = moneyrs*(0.04/12+1),
+            m6 = moneyrs*Math.pow(0.05/12+1,6),
             y1 = moneyrs*Math.pow(0.06+1,12);
 
-            onemonth.innerText= m1.toFixed(3);
-            sixmonth.innerText= m6.toFixed(3);
-            oneyear.innerText= y1.toFixed(3);
+            onemonth.innerText= m1.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            sixmonth.innerText= m6.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            oneyear.innerText= y1.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         
         }
     </script>

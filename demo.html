@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="number">
+    <button onclick="process()">Process</button>
+    <p id="display"></p>
+    <script>
+        function process() {
+            let p = document.getElementById("display");
+            let number = Number(document.getElementById("number").value)
+            let count = 0;
+            let n = 2;
+            let isPrimer = true;
+            while (count < number) {
+                isPrimer = true;
+                for (let i = 2; i < n; i++) {
+                    if (n % i == 0) {
+                        isPrimer = false;
+                        break;
+                    }
+                }
+                if (isPrimer) {
+                    count++;
+                    p.innerText += `${n},`
+                }
+                n++;
+            }
+        }
+      
+    </script>
+</body   >
+
+</html>
